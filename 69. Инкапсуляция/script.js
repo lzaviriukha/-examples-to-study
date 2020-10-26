@@ -8,8 +8,10 @@ class User {
     this._age = age;
   }
 
-  say() {
-    console.log(`Имя пользователя: ${this.name}, возраст ${this._age}`);
+  #surname = 'Shwarch';
+
+  say = () => {
+    console.log(`Имя пользователя: ${this.name} ${this.#surname}, возраст ${this._age}`);
   }
 
   get age() {
@@ -27,9 +29,7 @@ class User {
 }
 
 const ivan = new User('Ivan', 27);
-console.log(ivan.age);
-ivan.age = 99;
-console.log(ivan.age);
+console.log(inva.surname);
 ivan.say();
 
 
