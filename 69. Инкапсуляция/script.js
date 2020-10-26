@@ -5,20 +5,20 @@
 class User {
   constructor(name, age) {
     this.name = name;
-    this.userAge = age;
+    this._age = age;
   }
 
   say() {
-    console.log(`Имя пользователя: ${this.name}, возраст ${this.userAge}`);
+    console.log(`Имя пользователя: ${this.name}, возраст ${this._age}`);
   }
 
-  getAge() {
-    return this.userAge;
+  get age() {
+    return this._age;
   }
 
-  setAge(age) {
+  set age(age) {
     if (typeof age === 'number' && age > 0 && age < 110) {
-      this.userAge = age;
+      this._age = age;
     } else {
       console.log('Недопустимое значение');
     }
@@ -27,14 +27,9 @@ class User {
 }
 
 const ivan = new User('Ivan', 27);
-console.log(ivan.name);
-ivan.userAge = 99;
-console.log(ivan.getAge());
-
-ivan.setAge(30);
-ivan.setAge(300);
-console.log(ivan.getAge());
-
+console.log(ivan.age);
+ivan.age = 99;
+console.log(ivan.age);
 ivan.say();
 
 
