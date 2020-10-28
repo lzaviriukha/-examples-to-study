@@ -11,3 +11,15 @@ const number = 1;
 }()); // анонимная самовызывающаяся функция как модуль
 
 console.log(number);
+
+const user = (function (){ //Создание объектного интерфейса 
+  const privat = function() {
+    console.log('I am privat!');
+  };
+
+  return {
+    sayHello: privat
+  };
+}());
+
+user.sayHello();
